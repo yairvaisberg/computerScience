@@ -6,6 +6,35 @@ public class BaseCaLculator {
         return "1";
     }
 
+    //this function gets a number in a base finds the base and converts it into base 10
+    public  int convertToBase10(String input){
+
+        if (!hasb(input)){
+            return Integer.parseInt(input);//returns the int of the value of the string if there is no mention of base
+
+        }
+
+        if (!validateInput(input)){
+            System.exit(400);
+        }
+
+        String[] splitResult = input.split("b");
+
+        String number2Convert = splitResult[0];
+        String inputBase = splitResult[1];
+
+        char asciiBase = inputBase.charAt(0);
+        int base = 0;
+        if ((int) asciiBase >= 65 && (int) asciiBase <= 71) {
+            base = (int) asciiBase - 55;
+        }
+        if ((int) asciiBase >= 50 && (int) asciiBase <= 57) {
+            base = Integer.parseInt(inputBase);//returns integer value of char of number
+        }
+
+        return  Integer.parseInt(number2Convert,base);//convert from  num in a base to the num in base 10
+    }
+
 
 
     //check if the input has b to indicate base that's not 10 if it has return true
