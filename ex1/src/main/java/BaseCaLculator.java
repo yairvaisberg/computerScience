@@ -7,6 +7,43 @@ public class BaseCaLculator {
     }
 
 
+    // ClalculateBiggestValue gets a String num1 String num2 String of base and returns the biggest number form the multiplication or addition in the selected base
+    public  String ClalculateBiggestValue(String num1, String num2, String Sbase){
+
+        char Charbase = Sbase.charAt(0);
+
+        int base=0; //making the int base to get the number of the base , base must be valid so the int will change
+
+        if ((int)Charbase>=65 && (int)Charbase<=71){  //checking if base is from(A-G)
+            base=(int)Charbase-55;     //base - 55 = the base we need in numbers(int)
+        }
+        if ((int)Charbase>=50&&(int)Charbase<=57){    //checking if base is from(2-9)
+            base = Integer.parseInt(Sbase);     //using parse int to convert a string of a number to int
+        }
+
+
+        int add = addition(convertToBase10(num1), convertToBase10(num2));
+        int multiply = convertToBase10(num1) * convertToBase10(num2);
+
+        int num1Base10 =convertToBase10(num1);
+        int num2Base10 = convertToBase10(num2);
+
+        System.out.println("max numbers over [" + num1 + " , " + num2 + ", "+ convertFromBase10(add,base)  +"b"+Charbase+" , "+ convertFromBase10(multiply,base)+"b"+Charbase+"] is:");
+        if (num1Base10 + num2Base10 >= num1Base10 * num2Base10) {
+
+            return convertFromBase10(add,base) +"b" + Charbase;
+        }
+        else {
+
+            return convertFromBase10(multiply,base)+ "b" + Charbase;
+
+        }
+
+    }
+
+
+
+
     //gets a number in base 10 and a base and converts the selected number from base 10 to the new base
     public static String convertFromBase10(int num, int base) {
         if (base < 2 || base > 17) {
