@@ -6,6 +6,27 @@ public class BaseCaLculator {
         return "1";
     }
 
+
+    //gets a number in base 10 and a base and converts the selected number from base 10 to the new base
+    public static String convertFromBase10(int num, int base) {
+        if (base < 2 || base > 17) {
+            System.out.println("base must be between 2 and 16");
+            System.exit(0);
+        }
+
+        StringBuilder result = new StringBuilder();
+        while (num > 0) {
+            int remainder = num % base; // we divide the number by the base to find the remainder for the whole number
+            result.insert(0, remainder);// we insert the remainder into the result to build the number in the new base
+            num /= base;
+        }
+
+        return result.toString();//return the string of the number
+    }
+
+
+
+
     //this function gets a number in a base finds the base and converts it into base 10
     public  int convertToBase10(String input){
 
