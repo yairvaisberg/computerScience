@@ -30,15 +30,15 @@ public class Ex1Test {
     @Test
     void convertFromBase10Test(){
 
-        String coverted1 = Ex1.convertFromBase10(151,9);
+        String coverted1 = base.convertFromBase10(151,9);
         assertEquals(coverted1,"177");
-        String coverted2 = Ex1.convertFromBase10(45546,8);
+        String coverted2 = base.convertFromBase10(45546,8);
         assertEquals(coverted2,"130752");
-        String coverted3 = Ex1.convertFromBase10(48,15);
+        String coverted3 = base.convertFromBase10(48,15);
         assertEquals(coverted3,"33");
-        String coverted5 = Ex1.convertFromBase10(48,6);
+        String coverted5 = base.convertFromBase10(48,6);
         assertEquals(coverted5,"120");
-        String coverted6 = Ex1.convertFromBase10(32,5);
+        String coverted6 = base.convertFromBase10(32,5);
         assertEquals(coverted6,"112");
     }
 
@@ -49,15 +49,15 @@ public class Ex1Test {
 
         String[] NumToConvert = {"322","3434b6","BbG","10110b2","45b7"};
 
-        int converted1 = Ex1.convertToBase10(NumToConvert[0]);
+        int converted1 = base.convertToBase10(NumToConvert[0]);
         assertEquals(converted1,322);
-        int converted2 = Ex1.convertToBase10(NumToConvert[1]);
+        int converted2 = base.convertToBase10(NumToConvert[1]);
         assertEquals(converted2,814);
-        int converted3 = Ex1.convertToBase10(NumToConvert[2]);
+        int converted3 = base.convertToBase10(NumToConvert[2]);
         assertEquals(converted3,11);
-        int converted4 = Ex1.convertToBase10(NumToConvert[3]);
+        int converted4 = base.convertToBase10(NumToConvert[3]);
         assertEquals(converted4,22);
-        int converted5 = Ex1.convertToBase10(NumToConvert[4]);
+        int converted5 = base.convertToBase10(NumToConvert[4]);
         assertEquals(converted5,33);
 
     }
@@ -70,14 +70,14 @@ public class Ex1Test {
 
         for (int i = 0; i < isEmpty.length; i++) {
 
-            boolean isFalse = Ex1.checkIfNotEmpty(isEmpty[i]);
+            boolean isFalse = base.checkIfNotEmpty(isEmpty[i]);
             assertFalse(isFalse);
         }
 
         String[] isNotEmpty = {"322","3434b6","BbG","4AbD","0"};
 
         for (int i = 0; i < isNotEmpty.length; i++) {
-            boolean isTrue = Ex1.checkIfNotEmpty(isNotEmpty[i]);
+            boolean isTrue = base.checkIfNotEmpty(isNotEmpty[i]);
             assertTrue(isTrue);
         }
     }
@@ -89,14 +89,14 @@ public class Ex1Test {
         String[] hasbTrue = {"135bA","100111b2","12345b6","012b5","123bG","EFbG"};
 
         for (int i = 0; i < hasbTrue.length; i++) {
-            boolean isTrue = Ex1.hasb(hasbTrue[i]);
+            boolean isTrue = base.hasb(hasbTrue[i]);
             assertTrue(isTrue);
         }
 
         String[] hasbfalse = {"135","100111","12345","012","123","EF"};
 
         for (int i = 0; i < hasbfalse.length; i++) {
-            boolean isFalse = Ex1.hasb(hasbfalse[i]);
+            boolean isFalse = base.hasb(hasbfalse[i]);
             assertFalse(isFalse);
         }
     }
@@ -106,20 +106,20 @@ public class Ex1Test {
     @Test
     void additionTest(){
 
-        int addEqual1 = Ex1.addition(2,1);
+        int addEqual1 = base.addition(2,1);
         assertEquals(addEqual1,3);
-        int addEqual2 = Ex1.addition(4,3);
+        int addEqual2 = base.addition(4,3);
         assertEquals(addEqual2,7);
-        int addEqual3 = Ex1.addition(3,8);
+        int addEqual3 = base.addition(3,8);
         assertEquals(addEqual3,11);
 
-        int addNotEqual1 = Ex1.addition(1,6);
+        int addNotEqual1 = base.addition(1,6);
         assertNotEquals(addNotEqual1,5);
-        int addNotEqual2 = Ex1.addition(8,7);
+        int addNotEqual2 = base.addition(8,7);
         assertNotEquals(addNotEqual2,10);
-        int addNotEqual3 = Ex1.addition(4,0);
+        int addNotEqual3 = base.addition(4,0);
         assertNotEquals(addNotEqual3,2);
-        int addNotEqual4 = Ex1.addition(3,44);
+        int addNotEqual4 = base.addition(3,44);
         assertNotEquals(addNotEqual4,99);
 
     }
@@ -130,14 +130,14 @@ public class Ex1Test {
 
         String[] Valid = {"135bA","100111b2","12345b6","012b5","123bG","EFbG"};
         for (int i = 0; i < Valid.length; i++) {
-            boolean isTrue = Ex1.validateInput(Valid[i]);
+            boolean isTrue = base.validateInput(Valid[i]);
             assertTrue(isTrue);
         }
 
         String[] Invalid = {"b2", "0b1", "123b", "1234b11", "3b3", "-3b5", "3 b4", "GbG", "", null};
 
         for (int i = 0; i < Invalid.length; i++) {
-            boolean isFalse = Ex1.validateInput(Invalid[i]);
+            boolean isFalse = base.validateInput(Invalid[i]);
             assertFalse(isFalse);
         }
     }
