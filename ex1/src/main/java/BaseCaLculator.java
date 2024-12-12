@@ -29,5 +29,15 @@ public class BaseCaLculator {
         return a+b;
     }
 
+    // the function gets a string and returns true if it's not empty or null and if it contains the char 'b' in the string
+    public static boolean checkIfNotEmpty(String input){
+
+        if (input==null || input.isEmpty())
+            return false;
+
+        return true;
+
+    }
+
 
 }
