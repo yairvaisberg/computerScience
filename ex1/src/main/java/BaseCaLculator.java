@@ -2,13 +2,23 @@ import java.util.Scanner;
 
 public class BaseCaLculator {
 
-    public String calculate(String val1, String val2, String val3){
-        return "1";
-    }
 
-
-    // ClalculateBiggestValue gets a String num1 String num2 String of base and returns the biggest number form the multiplication or addition in the selected base
+    // ClalculateBiggestValue gets a String num1 String num2 String of base validates them and returns the biggest number form the multiplication or addition in the selected base
     public  String ClalculateBiggestValue(String num1, String num2, String Sbase){
+
+        if (!validateInput(num1)&&!validateInput(num2)){
+            System.out.println("both "+num1+" and "+num2+ " are in the wrong format");
+            System.exit(0);
+        }
+
+        if (!validateInput(num1)){
+            System.out.println(num1 + "  is the wrong format");
+            System.exit(0);
+        }
+        if (!validateInput(num2)){
+            System.out.println(num2 + "  is the wrong format");
+            System.exit(0);
+        }
 
         char Charbase = Sbase.charAt(0);
 
@@ -150,16 +160,20 @@ public class BaseCaLculator {
         String inputBase = splitResult[1];  //right side contains the string of the number of the base
 
         if (inputBase.length() != 1){   //check if base is not length 1 ,base must be length 1 we are cheking from base 2-G(2,3,4,5,6,7,8,9,A,B,C,D,E,F,G)
+
             return false;   //if base is not length 1 - return false
         }
 
-        if (number2Convert.isEmpty())   //check if we have String we need to convert to numbers
-            return false;   //if we don't - return false
+        if (number2Convert.isEmpty()) {  //check if we have String we need to convert to numbers
 
+            return false;   //if we don't - return false
+        }
         char asciiBase = inputBase.charAt(0); // using ascii to find if base is between 2-9 or A-G
 
         if( ((int)asciiBase>57 && (int)asciiBase<65) || (int)asciiBase<50 || (int)asciiBase>71) {   //if ascii of base is bigger than G or smaller than 2 or bigger than 9 but smaller than A
+
             return false;   //if it is then it's not a char that we are checking for base (examples - 'd','*','-','?','@') - return false
+
         }
 
         //base is a valid number
@@ -167,6 +181,7 @@ public class BaseCaLculator {
         int base=0; //making the int base to get the number of the base , base must be valid so the int will change
 
         if ((int)asciiBase>=65 && (int)asciiBase<=71){  //checking if base is from(A-G)
+
             base=(int)asciiBase-55;     //base - 55 = the base we need in numbers(int)
         }
         if ((int)asciiBase>=50&&(int)asciiBase<=57){    //checking if base is from(2-9)
@@ -175,6 +190,7 @@ public class BaseCaLculator {
 
         for (int i = 0; i < number2Convert.length() ; i++) {    //looping through all chars in String of numbers
             if( ((int)number2Convert.charAt(i)<65&&(int)number2Convert.charAt(i)>57)||(int)number2Convert.charAt(i)<48||(int)number2Convert.charAt(i)>71){ // check if every char in the number is valid(0-G)
+
                 return false; // if not - return false
             }
         }
@@ -189,6 +205,7 @@ public class BaseCaLculator {
                 digit=(int)number2Convert.charAt(i)-48; // get number value
             }
             if (digit>=base) {  //check if the current digit is bigger or equal to the base
+
                 return false; // if it is return false   4 is not in base 4 or lower
             }
         }
