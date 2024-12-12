@@ -1,9 +1,9 @@
 # Java Project: Base Calculator
 
 ## Description
- 
-a function that calculates the multiplication and the addition of 2 numbers in different bases and returns the value of the biggest in a selected base.
 
+a function that calculates the multiplication and the addition of 2 numbers in different bases and returns the value of the biggest in a selected base.
+if one of the numbers are not valid it tells the user which number is not valid and exits the function.
 ## Features
 - check if numbers are valid.
 - covert the base of numbers.
