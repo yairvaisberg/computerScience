@@ -1,7 +1,7 @@
 # Java Project: Base Calculator
 
 ## Description
-
+ 
 a function that calculates the multiplication and the addition of 2 numbers in different bases and returns the value of the biggest in a selected base.
 
 ## Features
