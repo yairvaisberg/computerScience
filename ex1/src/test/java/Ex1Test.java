@@ -10,6 +10,7 @@ public class Ex1Test {
 
 
     @Test
+    // test if ClalculateBiggestValue gives correct answers
     void ClalculateBiggestValue(){
         String ex1test1 = base.ClalculateBiggestValue("1010b2","5","A");
         assertEquals(ex1test1,"50bA");
@@ -29,7 +30,7 @@ public class Ex1Test {
 
     @Test
     void convertFromBase10Test(){
-
+    // test if convertFromBase10Test gives correct answers
         String coverted1 = base.convertFromBase10(151,9);
         assertEquals(coverted1,"177");
         String coverted2 = base.convertFromBase10(45546,8);
@@ -46,6 +47,8 @@ public class Ex1Test {
 
     @Test
     void convertToBase10Test(){
+        // test if convertToBase10Test gives correct answers
+
 
         String[] NumToConvert = {"322","3434b6","BbG","10110b2","45b7"};
 
@@ -65,6 +68,8 @@ public class Ex1Test {
 
     @Test
     void checkIfNotEmptyTest(){
+        // test if checkIfNotEmptyTest gives correct answers
+
 
         String[] isEmpty = {null,""};
 
@@ -85,6 +90,8 @@ public class Ex1Test {
 
     @Test
     void hasbTest(){
+        // test if hasbTest gives correct answers
+
 
         String[] hasbTrue = {"135bA","100111b2","12345b6","012b5","123bG","EFbG"};
 
@@ -105,6 +112,8 @@ public class Ex1Test {
 
     @Test
     void additionTest(){
+        // test if additionTest gives correct answers
+
 
         int addEqual1 = base.addition(2,1);
         assertEquals(addEqual1,3);
@@ -127,6 +136,8 @@ public class Ex1Test {
 
     @Test
     void validateInputTest(){
+        // test if validateInputTest gives correct answers
+
 
         String[] Valid = {"135bA","100111b2","12345b6","012b5","123bG","EFbG"};
         for (int i = 0; i < Valid.length; i++) {
