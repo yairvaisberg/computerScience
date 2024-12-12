@@ -4,24 +4,24 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class Ex1Test {
+public class BaseCaLculatortest {
 
     BaseCaLculator base = new BaseCaLculator();  //create new object base from BaseCaLculator
 
 
     @Test
     // test if ClalculateBiggestValue gives correct answers
-    void ClalculateBiggestValue(){
-        String ex1test1 = base.ClalculateBiggestValue("1010b2","5","A");
+    void CalculateBiggestValue(){
+        String ex1test1 = base.CalculateBiggestValue("1010b2","5","A");
         assertEquals(ex1test1,"50bA");
 
-        String ex1test2 = base.ClalculateBiggestValue("01b2","01b2","2");
+        String ex1test2 = base.CalculateBiggestValue("01b2","01b2","2");
         assertEquals(ex1test2,"10b2");
 
-        String ex1test3 = base.ClalculateBiggestValue("AbG","15b7","3");
+        String ex1test3 = base.CalculateBiggestValue("AbG","15b7","3");
         assertEquals(ex1test3,"11110b3");
 
-        String ex1test4 = base.ClalculateBiggestValue("1","1","7");
+        String ex1test4 = base.CalculateBiggestValue("1","1","7");
         assertEquals(ex1test4,"2b7");
 
     }

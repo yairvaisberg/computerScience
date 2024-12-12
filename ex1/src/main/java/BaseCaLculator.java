@@ -1,10 +1,13 @@
-import java.util.Scanner;
-
 public class BaseCaLculator {
 
-
-    // ClalculateBiggestValue gets a String num1 String num2 String of base validates them and returns the biggest number form the multiplication or addition in the selected base
-    public  String ClalculateBiggestValue(String num1, String num2, String Sbase){
+    /**
+     * CalculateBiggestValue gets a String num1 String num2 String of base validates them and returns the biggest number form the multiplication or addition in the selected base
+     * @param num1
+     * @param num2
+     * @param Sbase
+     * @return
+     */
+    public  String CalculateBiggestValue(String num1, String num2, String Sbase){
 
         if (!validateInput(num1)&&!validateInput(num2)){
             System.out.println("both "+num1+" and "+num2+ " are in the wrong format");

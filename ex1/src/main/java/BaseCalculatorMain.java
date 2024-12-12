@@ -22,7 +22,7 @@ public class BaseCalculatorMain {
 
 
         //run the function
-        System.out.println(base.ClalculateBiggestValue(num1, num2,Stringbase));
+        System.out.println(base.CalculateBiggestValue(num1, num2,Stringbase));
 
 
 
