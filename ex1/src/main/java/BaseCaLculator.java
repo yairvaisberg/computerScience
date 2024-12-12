@@ -24,5 +24,10 @@ public class BaseCaLculator {
         return true; //it's not empty or null and if it contains the char 'b' in the string then return true
     }
 
+    // this function adds int a and int b
+    public static int addition(int a,int b){
+        return a+b;
+    }
+
 
 }
